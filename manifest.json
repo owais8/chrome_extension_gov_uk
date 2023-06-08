@@ -1,0 +1,23 @@
+{
+    "name": "British.gov",
+    "description": "Automate your slot booking!",
+    "version": "1.0",
+    "manifest_version": 3,
+
+    "background": {
+      "service_worker" : "popup.js"
+    },
+    "permissions": ["storage","activeTab","scripting","tabs", "http://*/*"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    
+    "content_scripts": [
+        {
+        "matches": ["https://driver-services.dvsa.gov.uk/obs-web/*"],
+          "js": ["file.js"]
+        }
+      ],
+    "persistent": false
+    
+  }
